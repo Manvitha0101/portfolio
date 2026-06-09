@@ -171,7 +171,7 @@ export default function Hero() {
                     height: '100%',
                     objectFit: 'cover',
                     objectPosition: 'center 80%',
-                    transform: 'scale(1.8) translateY(-5%)'
+                    transform: 'scale(1.1) translateY(-5%)'
                   }}
                   draggable={false}
                 />

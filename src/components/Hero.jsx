@@ -18,10 +18,10 @@ function GitHubIcon({ size = 16 }) {
 }
 
 const STATS = [
-  { value: '9.39', label: 'CGPA', sub: 'B.Tech IT' },
-  { value: '3+', label: 'Projects', sub: 'In Production' },
+  { value: '9.39', label: 'CGPA',         sub: 'B.Tech IT' },
+  { value: '3+',   label: 'Projects',     sub: 'In Production' },
   { value: '300+', label: 'DSA Problems', sub: 'LeetCode & CodingBat' },
-  { value: '2×', label: 'Hackathons', sub: 'Winner + Finalist' },
+  { value: '2×',   label: 'Hackathons',   sub: 'Winner + Finalist' },
 ];
 
 export default function Hero() {
@@ -30,25 +30,17 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      style={{ paddingTop: '64px' }}
     >
       {/* Ambient background orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="absolute -top-24 -left-24 w-[600px] h-[600px] rounded-full opacity-[0.07] blur-[120px]"
-          style={{ background: 'var(--accent)' }}
-        />
-        <div
-          className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full opacity-[0.05] blur-[100px]"
-          style={{ background: 'var(--accent-2)' }}
-        />
-        <div
-          className="absolute bottom-0 left-1/3 w-[350px] h-[350px] rounded-full opacity-[0.04] blur-[90px]"
-          style={{ background: 'var(--accent-3)' }}
-        />
+        <div className="absolute -top-24 -left-24 w-[600px] h-[600px] rounded-full opacity-[0.07] blur-[120px]" style={{ background: 'var(--accent)' }} />
+        <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full opacity-[0.05] blur-[100px]"  style={{ background: 'var(--accent-2)' }} />
+        <div className="absolute bottom-0 left-1/3 w-[350px] h-[350px] rounded-full opacity-[0.04] blur-[90px]"  style={{ background: 'var(--accent-3)' }} />
       </div>
 
-      {/* Subtle dot grid */}
+      {/* Dot grid */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -58,161 +50,149 @@ export default function Hero() {
         }}
       />
 
-      {/* Content */}
-      <div className="section-container relative z-10 text-center">
+      <div className="section-container relative z-10 w-full">
 
-        {/* Status badge */}
-        <motion.div {...fadeUp(0)} className="flex justify-center mb-8">
-          <span
-            className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-xs font-semibold border"
-            style={{
-              background: 'var(--accent-dim)',
-              borderColor: 'var(--accent)',
-              color: 'var(--accent)',
-              letterSpacing: '0.02em',
-            }}
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#4ade80]" />
-            <Sparkles size={12} />
-            Available for Internship Opportunities
-          </span>
-        </motion.div>
+        {/* ── Two-column layout: text left, photo right ── */}
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-12 mb-12">
 
-        {/* Location */}
-        <motion.div {...fadeUp(0.05)} className="flex items-center justify-center gap-1.5 mb-5">
-          <MapPin size={13} style={{ color: 'var(--text-muted)' }} />
-          <span className="text-sm" style={{ color: 'var(--text-muted)' }}>Hyderabad, India</span>
-        </motion.div>
+          {/* Left: Text */}
+          <div className="flex-1 text-center lg:text-left">
 
-        {/* Name */}
-        <motion.h1
-          {...fadeUp(0.1)}
-          className="font-black tracking-tight mb-4"
-          style={{
-            fontSize: 'clamp(3rem, 9vw, 6.5rem)',
-            letterSpacing: '-0.05em',
-            lineHeight: 1.0,
-            color: 'var(--text-primary)',
-          }}
-        >
-          Manvitha{' '}
-          <span className="gradient-text">Budidha</span>
-        </motion.h1>
+            {/* Status badge */}
+            <motion.div {...fadeUp(0)} className="flex justify-center lg:justify-start mb-6">
+              <span
+                className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-xs font-semibold border"
+                style={{ background: 'var(--accent-dim)', borderColor: 'var(--accent)', color: 'var(--accent)', letterSpacing: '0.02em' }}
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#4ade80]" />
+                <Sparkles size={12} />
+                Available for Internship Opportunities
+              </span>
+            </motion.div>
 
-        {/* Role pills */}
-        <motion.div {...fadeUp(0.2)} className="flex flex-wrap items-center justify-center gap-2 mb-6">
-          {['IT Student @ GNITS', 'Aspiring Software Engineer', 'Full Stack Developer'].map((role) => (
-            <span
-              key={role}
-              className="px-4 py-1.5 rounded-full text-sm font-medium"
-              style={{
-                background: 'var(--surface-2)',
-                color: 'var(--text-secondary)',
-                border: '1px solid var(--border)',
-              }}
+            {/* Location */}
+            <motion.div {...fadeUp(0.05)} className="flex items-center justify-center lg:justify-start gap-1.5 mb-4">
+              <MapPin size={13} style={{ color: 'var(--text-muted)' }} />
+              <span className="text-sm" style={{ color: 'var(--text-muted)' }}>Hyderabad, India</span>
+            </motion.div>
+
+            {/* Name */}
+            <motion.h1
+              {...fadeUp(0.1)}
+              className="font-black tracking-tight mb-5"
+              style={{ fontSize: 'clamp(2.6rem, 7vw, 5.5rem)', letterSpacing: '-0.05em', lineHeight: 1.0, color: 'var(--text-primary)' }}
             >
-              {role}
-            </span>
-          ))}
-        </motion.div>
+              Manvitha{' '}
+              <span className="gradient-text">Budidha</span>
+            </motion.h1>
 
-        {/* Tagline */}
-        <motion.p
-          {...fadeUp(0.3)}
-          style={{
-            fontSize: 'clamp(1rem, 2.2vw, 1.2rem)',
-            color: 'var(--text-secondary)',
-            maxWidth: '580px',
-            margin: '0 auto 40px',
-            lineHeight: 1.8,
-          }}
-        >
-          I build production-grade systems — from mobile health apps to async REST APIs —
-          and compete in national hackathons to sharpen my engineering instincts.
-        </motion.p>
+            {/* Role pills */}
+            <motion.div {...fadeUp(0.2)} className="flex flex-wrap justify-center lg:justify-start gap-2 mb-5">
+              {['IT Student @ GNITS', 'Aspiring Software Engineer', 'Full Stack Developer'].map((role) => (
+                <span
+                  key={role}
+                  className="px-4 py-1.5 rounded-full text-sm font-medium"
+                  style={{ background: 'var(--surface-2)', color: 'var(--text-secondary)', border: '1px solid var(--border)' }}
+                >
+                  {role}
+                </span>
+              ))}
+            </motion.div>
 
-        {/* CTAs */}
-        <motion.div {...fadeUp(0.4)} className="flex flex-wrap items-center justify-center gap-3 mb-6">
-          <a
-            href="#projects"
-            onClick={(e) => { e.preventDefault(); scrollTo('#projects'); }}
-            className="btn-primary"
-            id="hero-view-projects"
-          >
-            View Projects <ChevronRight size={15} />
-          </a>
-          <a
-            href="/resume.pdf"
-            download
-            className="btn-ghost"
-            id="hero-download-resume"
-          >
-            <Download size={15} />
-            Download Resume
-          </a>
-          <a
-            href="#contact"
-            onClick={(e) => { e.preventDefault(); scrollTo('#contact'); }}
-            className="btn-ghost"
-            id="hero-contact"
-          >
-            Contact Me
-          </a>
-        </motion.div>
+            {/* Tagline */}
+            <motion.p
+              {...fadeUp(0.3)}
+              style={{ fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', color: 'var(--text-secondary)', maxWidth: '520px', marginBottom: '36px', lineHeight: 1.8 }}
+              className="mx-auto lg:mx-0"
+            >
+              I build production-grade systems — from mobile health apps to async REST APIs —
+              and compete in national hackathons to sharpen my engineering instincts.
+            </motion.p>
 
-        {/* Social quick links */}
-        <motion.div {...fadeUp(0.45)} className="flex items-center justify-center gap-4 mb-16">
-          <a
-            href={CONTACT.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:opacity-70"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            <GitHubIcon size={14} /> GitHub
-          </a>
-          <span style={{ color: 'var(--border)' }}>·</span>
-          <a
-            href={CONTACT.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium transition-colors hover:opacity-70"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            LinkedIn
-          </a>
+            {/* CTAs */}
+            <motion.div {...fadeUp(0.4)} className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-5">
+              <a href="#projects" onClick={(e) => { e.preventDefault(); scrollTo('#projects'); }} className="btn-primary" id="hero-view-projects">
+                View Projects <ChevronRight size={15} />
+              </a>
+              <a href="/resume.pdf" download className="btn-ghost" id="hero-download-resume">
+                <Download size={15} /> Download Resume
+              </a>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('#contact'); }} className="btn-ghost" id="hero-contact">
+                Contact Me
+              </a>
+            </motion.div>
 
-        </motion.div>
+            {/* Social quick links */}
+            <motion.div {...fadeUp(0.45)} className="flex items-center justify-center lg:justify-start gap-4">
+              <a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:opacity-70" style={{ color: 'var(--text-muted)' }}>
+                <GitHubIcon size={14} /> GitHub
+              </a>
+              <span style={{ color: 'var(--border)' }}>·</span>
+              <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:opacity-70" style={{ color: 'var(--text-muted)' }}>
+                LinkedIn
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Right: Profile photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1,   y: 0  }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+            className="flex-shrink-0 flex items-center justify-center"
+          >
+            <div
+              className="relative"
+              style={{ width: 'clamp(240px, 30vw, 340px)', height: 'clamp(240px, 30vw, 340px)' }}
+            >
+              {/* Animated gradient ring */}
+              <div
+                className="absolute inset-0 rounded-full animate-spin-slow"
+                style={{
+                  background: 'conic-gradient(from 0deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent))',
+                  borderRadius: '50%',
+                }}
+              />
+              {/* Glow behind photo */}
+              <div
+                className="absolute inset-2 rounded-full blur-xl opacity-30"
+                style={{ background: 'var(--gradient-accent)' }}
+              />
+              {/* Photo — face centered */}
+              <div
+                className="absolute inset-[4px] rounded-full overflow-hidden"
+                style={{ border: '4px solid var(--bg)' }}
+              >
+                <img
+                  src="/profile.jpg"
+                  alt="Manvitha Budidha"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center 80%',
+                    transform: 'scale(1.8) translateY(-5%)'
+                  }}
+                  draggable={false}
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Stats row */}
         <motion.div
           {...fadeUp(0.55)}
           className="grid grid-cols-2 sm:grid-cols-4 gap-px max-w-2xl mx-auto"
-          style={{
-            background: 'var(--border)',
-            borderRadius: '16px',
-            overflow: 'hidden',
-            border: '1px solid var(--border)',
-          }}
+          style={{ background: 'var(--border)', borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border)' }}
         >
           {STATS.map((stat) => (
-            <div
-              key={stat.label}
-              className="text-center py-6 px-4"
-              style={{ background: 'var(--surface)' }}
-            >
-              <div
-                className="text-2xl font-black tracking-tight gradient-text"
-                style={{ letterSpacing: '-0.03em' }}
-              >
+            <div key={stat.label} className="text-center py-6 px-4" style={{ background: 'var(--surface)' }}>
+              <div className="text-2xl font-black tracking-tight gradient-text" style={{ letterSpacing: '-0.03em' }}>
                 {stat.value}
               </div>
-              <div className="text-sm font-semibold mt-1" style={{ color: 'var(--text-primary)' }}>
-                {stat.label}
-              </div>
-              <div className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
-                {stat.sub}
-              </div>
+              <div className="text-sm font-semibold mt-1" style={{ color: 'var(--text-primary)' }}>{stat.label}</div>
+              <div className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{stat.sub}</div>
             </div>
           ))}
         </motion.div>

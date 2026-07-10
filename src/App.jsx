@@ -5,7 +5,7 @@ import About from './components/About';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Experience from './components/Experience';
+
 import Achievements from './components/Achievements';
 import CodingProfiles from './components/CodingProfiles';
 import Contact from './components/Contact';
@@ -42,7 +42,7 @@ function App() {
         <Education />
         <Skills />
         <Projects />
-        <Experience />
+
         <Achievements />
         <CodingProfiles />
         <Contact />

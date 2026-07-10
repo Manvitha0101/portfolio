@@ -4,7 +4,7 @@ export const NAV_LINKS = [
   { label: 'Education',    href: '#education' },
   { label: 'Skills',       href: '#skills' },
   { label: 'Projects',     href: '#projects' },
-  { label: 'Experience',   href: '#experience' },
+
   { label: 'Achievements', href: '#achievements' },
   { label: 'Contact',      href: '#contact' },
 ];
@@ -15,7 +15,7 @@ export const SKILLS = [
     category: 'Languages',
     icon: 'code',
     color: '#818cf8',
-    items: ['Python', 'Java', 'C', 'SQL', 'Dart', 'HTML/CSS', 'JavaScript'],
+    items: ['Python', 'Java', 'C', 'SQL', 'Dart', 'HTML/CSS', 'JavaScript', 'TypeScript'],
   },
   {
     category: 'Frontend',
@@ -39,7 +39,7 @@ export const SKILLS = [
     category: 'Tools & Platforms',
     icon: 'tool',
     color: '#a78bfa',
-    items: ['Git', 'GitHub', 'Firebase Auth', 'FCM', 'Render', 'VS Code'],
+    items: ['Git', 'GitHub', 'Firebase Auth', 'FCM', 'Render', 'Vercel', 'Gemini AI', 'VS Code'],
   },
   {
     category: 'Core CS',
@@ -51,6 +51,30 @@ export const SKILLS = [
 
 // ── Projects ──────────────────────────────────────────
 export const PROJECTS = [
+  {
+    id: 'stylespeak',
+    title: 'StyleSpeak',
+    subtitle: 'AI Fashion Translator',
+    emoji: '👗',
+    problem:
+      'People describe clothing in everyday language ("something flowy and elegant for a summer wedding"), but fashion search engines and e-commerce platforms require precise technical terminology — creating a disconnect between intent and discovery.',
+    solution:
+      'An AI-powered fashion translation platform that converts natural language clothing descriptions into professional fashion terminology, complete with curated outfit recommendations and shoppable product links. Built with React/TypeScript frontend and a Gemini AI-powered backend.',
+    architecture:
+      'React + TypeScript frontend deployed on Vercel communicates with a serverless backend that orchestrates Google Gemini API calls. The system parses conversational fashion queries, extracts style intent via prompt engineering, and returns structured outfit recommendations with confidence analysis.',
+    features: [
+      'Natural language to professional fashion term translation via Gemini AI',
+      'Interactive outfit recommendations with clickable shopping links',
+      'Conversational UI with suggestion chips for iterative style refinement',
+      'Robust error handling with retry logic for rate limits and service issues',
+      'Fully responsive design optimized for both desktop and mobile',
+    ],
+    stack: ['React', 'TypeScript', 'Gemini AI', 'Vercel', 'REST API'],
+    impact: 'Live production platform translating everyday language into professional fashion vocabulary.',
+    github: 'https://github.com/Manvitha0101',
+    demo: 'https://style-speak-frontend.vercel.app/',
+    featured: true,
+  },
   {
     id: 'mediassure',
     title: 'MediAssure',
@@ -99,32 +123,7 @@ export const PROJECTS = [
   },
 ];
 
-// ── Experience ────────────────────────────────────────
-export const EXPERIENCE = [
-  {
-    id: 'capabl',
-    role: 'Software Development Intern',
-    company: 'Capabl',
-    type: 'Remote',
-    period: 'Jun 2024 – Aug 2024',
-    duration: '3 months',
-    logo: '🚀',
-    color: '#818cf8',
-    summary:
-      'Architected and deployed AcadeBot, a production-grade conversational AI assistant for student event management, integrating a FastAPI backend with an LLM API. The system serves responses via 50+ REST endpoints and is live at smart-timetable-2-0qch.onrender.com.',
-    responsibilities: [
-      'Architected and deployed AcadeBot — a conversational AI assistant for student event management — using FastAPI integrated with an LLM API, serving structured responses via 50+ REST endpoints.',
-      'Built a schedule-tracking module that parses and stores structured event records (title, date, time, location, type), supporting personalized reminders and timed notifications delivered via webhook callbacks.',
-      'Designed the end-to-end system independently: defined API contracts, implemented request/response models using Pydantic, and configured continuous deployment on Render from a GitHub repository.',
-    ],
-    stack: ['Python', 'FastAPI', 'LLM API', 'Pydantic', 'Render', 'REST APIs', 'GitHub Actions'],
-    achievements: [
-      '50+ production REST endpoints serving live traffic',
-      'Independent end-to-end system design from API contracts to deployment',
-      'Continuous deployment pipeline on Render via GitHub integration',
-    ],
-  },
-];
+
 
 // ── Education ─────────────────────────────────────────
 export const EDUCATION = [

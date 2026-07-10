@@ -88,7 +88,7 @@ export default function Navbar({ theme, toggleTheme }) {
           <div className="flex items-center gap-2">
             {/* Resume CTA */}
             <a
-              href="/resume.pdf"
+              href="/my_resume.pdf"
               download
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all duration-150 no-underline"
               style={{
@@ -158,7 +158,7 @@ export default function Navbar({ theme, toggleTheme }) {
               })}
               <li className="mt-2 pt-2" style={{ borderTop: '1px solid var(--border)' }}>
                 <a
-                  href="/resume.pdf"
+                  href="/my_resume.pdf"
                   download
                   className="block px-3 py-2.5 rounded-lg text-sm font-semibold no-underline"
                   style={{ color: 'var(--accent)', background: 'var(--accent-dim)' }}

@@ -114,7 +114,7 @@ export default function Hero() {
               <a href="#projects" onClick={(e) => { e.preventDefault(); scrollTo('#projects'); }} className="btn-primary" id="hero-view-projects">
                 View Projects <ChevronRight size={15} />
               </a>
-              <a href="/resume.pdf" download className="btn-ghost" id="hero-download-resume">
+              <a href="/my_resume.pdf" download className="btn-ghost" id="hero-download-resume">
                 <Download size={15} /> Download Resume
               </a>
               <a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('#contact'); }} className="btn-ghost" id="hero-contact">

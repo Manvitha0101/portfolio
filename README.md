@@ -18,7 +18,6 @@
 | **Education** | Animated timeline — GNITS, Sri Guru Junior College, New Vision High School |
 | **Skills** | Grouped skill cards — Languages, Frontend, Backend, Databases, Tools, Core CS |
 | **Projects** | MediAssure & Coding Progress Tracker — click to expand architecture + impact |
-| **Experience** | Capabl Software Development Internship — responsibilities, achievements, stack |
 | **Achievements** | Indathon Hackathon Winner, CipherCop National Finalist, 300+ DSA problems |
 | **Certifications** | Google Kaggle Agentic AI · IBM Cybersecurity · Google AI Essentials |
 | **Coding Profiles** | GitHub · LeetCode · LinkedIn |
@@ -146,4 +145,3 @@ Dark mode is enabled by default and toggled via the sun/moon button in the navba
 
 ---
 
-<p align="center">Designed & built by Manvitha Budidha · 2026</p>

@@ -18,10 +18,10 @@ function GitHubIcon({ size = 16 }) {
 }
 
 const STATS = [
-  { value: '9.39', label: 'CGPA',         sub: 'B.Tech IT' },
-  { value: '3+',   label: 'Projects',     sub: 'In Production' },
-  { value: '300+', label: 'DSA Problems', sub: 'LeetCode & CodingBat' },
-  { value: '2×',   label: 'Hackathons',   sub: 'Winner + Finalist' },
+  { value: '9.38', label: 'CGPA',         sub: 'B.Tech IT @ GNITS' },
+  { value: '3+',   label: 'Projects',     sub: 'Full Stack & Mobile' },
+  { value: '300+', label: 'DSA Problems', sub: 'LeetCode & CodeChef' },
+  { value: '3+',   label: 'Hackathons',   sub: 'Adobe, CipherCop & FlowZint' },
 ];
 
 export default function Hero() {
@@ -66,7 +66,7 @@ export default function Hero() {
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#4ade80]" />
                 <Sparkles size={12} />
-                Available for Internship Opportunities
+                Available for Software Engineering Internships
               </span>
             </motion.div>
 
@@ -88,7 +88,7 @@ export default function Hero() {
 
             {/* Role pills */}
             <motion.div {...fadeUp(0.2)} className="flex flex-wrap justify-center lg:justify-start gap-2 mb-5">
-              {['IT Student @ GNITS', 'Aspiring Software Engineer', 'Full Stack Developer'].map((role) => (
+              {['B.Tech IT @ GNITS', 'Full Stack Developer', 'Backend & REST APIs', 'Algorithm-Driven Systems'].map((role) => (
                 <span
                   key={role}
                   className="px-4 py-1.5 rounded-full text-sm font-medium"
@@ -102,11 +102,11 @@ export default function Hero() {
             {/* Tagline */}
             <motion.p
               {...fadeUp(0.3)}
-              style={{ fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', color: 'var(--text-secondary)', maxWidth: '520px', marginBottom: '36px', lineHeight: 1.8 }}
+              style={{ fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', color: 'var(--text-secondary)', maxWidth: '540px', marginBottom: '36px', lineHeight: 1.8 }}
               className="mx-auto lg:mx-0"
             >
-              I build production-grade systems — from mobile health apps to async REST APIs —
-              and compete in national hackathons to sharpen my engineering instincts.
+              I build production-ready systems — from capacity-aware delivery route optimization engines to
+              mobile healthcare platforms — with hands-on experience across Python, Java, React.js, Node.js, and PostgreSQL.
             </motion.p>
 
             {/* CTAs */}
@@ -123,13 +123,21 @@ export default function Hero() {
             </motion.div>
 
             {/* Social quick links */}
-            <motion.div {...fadeUp(0.45)} className="flex items-center justify-center lg:justify-start gap-4">
+            <motion.div {...fadeUp(0.45)} className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
               <a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:opacity-70" style={{ color: 'var(--text-muted)' }}>
                 <GitHubIcon size={14} /> GitHub
               </a>
               <span style={{ color: 'var(--border)' }}>·</span>
               <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:opacity-70" style={{ color: 'var(--text-muted)' }}>
                 LinkedIn
+              </a>
+              <span style={{ color: 'var(--border)' }}>·</span>
+              <a href={CONTACT.leetcode} target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:opacity-70" style={{ color: 'var(--text-muted)' }}>
+                LeetCode
+              </a>
+              <span style={{ color: 'var(--border)' }}>·</span>
+              <a href={CONTACT.codechef} target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:opacity-70" style={{ color: 'var(--text-muted)' }}>
+                CodeChef
               </a>
             </motion.div>
           </div>

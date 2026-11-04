@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Shield, Code2, Award } from 'lucide-react';
+import { Trophy, Shield, Code2, Award, Sparkles } from 'lucide-react';
 import { ACHIEVEMENTS, CERTIFICATIONS } from '../data/content';
 
-const ICON_MAP = { trophy: Trophy, shield: Shield, code2: Code2 };
+const ICON_MAP = { trophy: Trophy, shield: Shield, code2: Code2, award: Award, sparkles: Sparkles };
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -13,6 +13,10 @@ const fadeUp = (delay = 0) => ({
 });
 
 export default function Achievements() {
+  const highlightItem = ACHIEVEMENTS.find((a) => a.highlight) || ACHIEVEMENTS[0];
+  const otherItems = ACHIEVEMENTS.filter((a) => a.id !== highlightItem?.id);
+  const HighlightIcon = highlightItem ? ICON_MAP[highlightItem.icon] || Award : Award;
+
   return (
     <section
       id="achievements"
@@ -21,61 +25,61 @@ export default function Achievements() {
     >
       <div className="section-container">
 
-        {/* ── Achievements ── */}
+        {/* ── Achievements Header ── */}
         <motion.div {...fadeUp(0)} className="mb-14">
           <p className="section-label">Recognition</p>
-          <h2 className="section-title">Achievements &amp; Certifications</h2>
+          <h2 className="section-title">Achievements &amp; Technical Programs</h2>
           <p className="section-subtitle">
-            Proof over promises — hackathon wins, national recognition, and verified learning.
+            Demonstrated excellence — academic scholarships, national hackathon shortlists, and competitive programming milestones.
           </p>
         </motion.div>
 
-        {/* Hackathon highlight card */}
-        <motion.div
-          {...fadeUp(0.1)}
-          className="achievement-card mb-6 p-7 relative overflow-hidden"
-          style={{
-            background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(79, 70, 229, 0.08) 100%)',
-            borderColor: '#f59e0b40',
-          }}
-        >
-          {/* Glow */}
-          <div
-            className="absolute -top-12 -right-12 w-48 h-48 rounded-full blur-[60px] pointer-events-none"
-            style={{ background: 'rgba(245, 158, 11, 0.15)' }}
-          />
-
-          <div className="relative z-10 flex flex-wrap items-start gap-6">
+        {/* Highlighted card: Scholarship */}
+        {highlightItem && (
+          <motion.div
+            {...fadeUp(0.1)}
+            className="achievement-card mb-6 p-7 relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(79, 70, 229, 0.08) 100%)',
+              borderColor: '#f59e0b40',
+            }}
+          >
+            {/* Glow */}
             <div
-              className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
-              style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#f59e0b' }}
-            >
-              <Trophy size={28} />
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex flex-wrap items-center gap-2 mb-2">
-                <h3 className="text-xl font-black tracking-tight" style={{ color: 'var(--text-primary)' }}>
-                  Indathon Hackathon — GNITS
-                </h3>
-                <span
-                  className="text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"
-                  style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#f59e0b' }}
-                >
-                  🏆 Winner
-                </span>
+              className="absolute -top-12 -right-12 w-48 h-48 rounded-full blur-[60px] pointer-events-none"
+              style={{ background: 'rgba(245, 158, 11, 0.15)' }}
+            />
+
+            <div className="relative z-10 flex flex-wrap items-start gap-6">
+              <div
+                className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
+                style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#f59e0b' }}
+              >
+                <HighlightIcon size={28} />
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                Built and presented an end-to-end agentic AI system that placed first among competing teams
-                at an institute-level hackathon on Agentic AI. Demonstrated full system design — from
-                prompt engineering and LLM integration to a deployable product — under time constraints.
-              </p>
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 className="text-xl font-black tracking-tight" style={{ color: 'var(--text-primary)' }}>
+                    {highlightItem.title}
+                  </h3>
+                  <span
+                    className="text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"
+                    style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#f59e0b' }}
+                  >
+                    {highlightItem.badge}
+                  </span>
+                </div>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                  {highlightItem.description}
+                </p>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        )}
 
         {/* Other achievements */}
         <div className="grid sm:grid-cols-2 gap-5 mb-16">
-          {ACHIEVEMENTS.filter(a => a.id !== 'indathon').map((item, i) => {
+          {otherItems.map((item, i) => {
             const Icon = ICON_MAP[item.icon] || Trophy;
             return (
               <motion.div
@@ -115,11 +119,11 @@ export default function Achievements() {
           })}
         </div>
 
-        {/* ── Certifications ── */}
+        {/* ── Technical Programs & Certifications ── */}
         <motion.div {...fadeUp(0.2)} className="mb-10">
-          <p className="section-label">Certifications</p>
+          <p className="section-label">Programs &amp; Learning</p>
           <h3 className="text-2xl font-bold tracking-tight" style={{ color: 'var(--text-primary)', letterSpacing: '-0.03em' }}>
-            Verified Learning
+            Technical Programs &amp; Certifications
           </h3>
         </motion.div>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Copy, Check, Send } from 'lucide-react';
+import { Mail, Phone, Copy, Check, Send } from 'lucide-react';
 import { CONTACT } from '../data/content';
 
 const fadeUp = (delay = 0) => ({
@@ -27,10 +27,10 @@ function LinkedInIcon({ size = 20 }) {
 }
 
 const LINKS = [
-  { id: 'contact-email',    label: 'Email',    value: CONTACT.email,    href: `mailto:${CONTACT.email}`,    Icon: Mail,        copyable: true  },
-
-  { id: 'contact-github',   label: 'GitHub',   value: 'manvitha0101',   href: CONTACT.github,               Icon: GitHubIcon,  copyable: false },
-  { id: 'contact-linkedin', label: 'LinkedIn', value: 'manvithabudidha',href: CONTACT.linkedin,             Icon: LinkedInIcon,copyable: false },
+  { id: 'contact-email',    label: 'Email',    value: CONTACT.email,    href: `mailto:${CONTACT.email}`,                   Icon: Mail,        copyable: true  },
+  { id: 'contact-phone',    label: 'Phone',    value: CONTACT.phone,    href: `tel:${CONTACT.phone.replace(/[\s+]/g, '')}`, Icon: Phone,       copyable: true  },
+  { id: 'contact-github',   label: 'GitHub',   value: 'manvitha0101',   href: CONTACT.github,                              Icon: GitHubIcon,  copyable: false },
+  { id: 'contact-linkedin', label: 'LinkedIn', value: 'manvithabudidha',href: CONTACT.linkedin,                            Icon: LinkedInIcon,copyable: false },
 ];
 
 export default function Contact() {
@@ -66,8 +66,8 @@ export default function Contact() {
           <p className="section-label">Contact</p>
           <h2 className="section-title">Let's connect</h2>
           <p className="section-subtitle">
-            Whether it's an internship opportunity, a collaboration, or just a question —
-            I read every message and respond within 24 hours.
+            Whether it's a software engineering internship opportunity, a project collaboration, or an engineering inquiry —
+            I welcome your message and respond promptly.
           </p>
         </motion.div>
 
@@ -141,7 +141,7 @@ export default function Contact() {
             >
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 flex-shrink-0 animate-pulse shadow-[0_0_8px_#4ade80]" />
               <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                <strong style={{ color: 'var(--text-primary)' }}>Available</strong> for internships and part-time software engineering roles.
+                <strong style={{ color: 'var(--text-primary)' }}>Available</strong> for Software Engineering internship opportunities.
               </p>
             </div>
           </motion.div>
@@ -161,7 +161,7 @@ export default function Contact() {
                   Message sent!
                 </h3>
                 <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  Your email client should have opened. I'll reply within 24 hours.
+                  Your email client should have opened. I'll reply promptly.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
@@ -212,7 +212,7 @@ export default function Contact() {
                   </label>
                   <textarea
                     required
-                    placeholder="Hi Manvitha, I'd love to discuss a software engineering internship opportunity..."
+                    placeholder="Hi Manvitha, I'd love to connect regarding a software engineering internship opportunity..."
                     className="form-input"
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}

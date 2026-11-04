@@ -26,6 +26,14 @@ function LeetCodeIcon({ size = 20 }) {
   );
 }
 
+function CodeChefIcon({ size = 20 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.69 2 6 4.69 6 8c0 .28.02.56.06.83A4.5 4.5 0 0 0 4.5 17.5h15a4.5 4.5 0 0 0-1.56-8.67c.04-.27.06-.55.06-.83 0-3.31-2.69-6-6-6zm-4.5 17v2h9v-2h-9zm2-8.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+    </svg>
+  );
+}
+
 function LinkedInIcon({ size = 20 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -34,7 +42,12 @@ function LinkedInIcon({ size = 20 }) {
   );
 }
 
-const PLATFORM_ICONS = { GitHub: GitHubIcon, LeetCode: LeetCodeIcon, LinkedIn: LinkedInIcon };
+const PLATFORM_ICONS = {
+  GitHub: GitHubIcon,
+  LeetCode: LeetCodeIcon,
+  CodeChef: CodeChefIcon,
+  LinkedIn: LinkedInIcon,
+};
 
 export default function CodingProfiles() {
   return (
@@ -42,11 +55,11 @@ export default function CodingProfiles() {
       <div className="section-container">
         <motion.div {...fadeUp(0)} className="mb-10">
           <p className="section-label">Online Presence</p>
-          <h2 className="section-title">GitHub &amp; Coding Profiles</h2>
-          <p className="section-subtitle">Find my code, competitive programming activity, and professional network.</p>
+          <h2 className="section-title">Coding &amp; Professional Profiles</h2>
+          <p className="section-subtitle">Explore my open-source code repositories, competitive programming track records, and professional network.</p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-3 gap-4 max-w-2xl">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl">
           {CODING_PROFILES.map((profile, i) => {
             const Icon = PLATFORM_ICONS[profile.platform] || Code;
             return (

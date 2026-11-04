@@ -13,32 +13,32 @@ const PILLARS = [
   {
     icon: Server,
     color: '#818cf8',
-    title: 'Backend Engineer at Heart',
-    body: 'Comfortable designing REST APIs end-to-end — from Pydantic models and async FastAPI handlers to PostgreSQL schemas and Render deployments.',
+    title: 'Backend & Systems at Heart',
+    body: 'Designing high-performance REST APIs end-to-end — from Node.js, Express.js, and FastAPI handlers to PostgreSQL schemas with Prisma and algorithmic route optimization.',
   },
   {
     icon: Code2,
     color: '#38bdf8',
-    title: 'Full Stack Versatility',
-    body: 'Ships production code across the stack — Flutter mobile apps, React web interfaces, FastAPI backends, and Firebase cloud services.',
+    title: 'Full Stack & Mobile Versatility',
+    body: 'Ships production-ready code across platforms — React.js web interfaces, Node.js and Python backends, Flutter mobile apps (Android/iOS), and Firebase cloud services.',
   },
   {
     icon: Brain,
     color: '#34d399',
-    title: 'AI Application Builder',
-    body: 'Integrates LLM APIs into real products (AcadeBot at Capabl) and holds certifications in Agentic AI, AI Essentials, and AI Cybersecurity.',
+    title: 'AI & Multi-Agent Systems',
+    body: 'Trained in the Google × Kaggle 5-Day AI Agents Intensive Program (Google ADK, Gemini, tool calling, MCP, and multi-agent systems); builds AI apps like StyleSpeak with transparent reasoning traces.',
   },
   {
     icon: Zap,
     color: '#f59e0b',
-    title: 'Competitive Programmer',
-    body: 'Solved 300+ LeetCode/CodingBat problems across arrays, trees, graphs, DP, and binary search. Hackathon winner and national finalist.',
+    title: 'Competitive Programmer & Hackathons',
+    body: 'Solved 300+ problems across LeetCode and CodeChef. Shortlisted in Adobe Hackathon (Round 2, top 2,00,000+), 3rd Runner-Up in CipherCop National Hackathon, and 4-year Laxmi Charities Scholarship recipient.',
   },
 ];
 
 const INTERESTS = [
-  'Software Development', 'Backend Engineering', 'Full Stack Development',
-  'Data Structures & Algorithms', 'AI Applications', 'System Design',
+  'Software Engineering', 'Backend Systems', 'Full Stack Development',
+  'Data Structures & Algorithms', 'AI Agents & LLMs', 'Database Design',
 ];
 
 export default function About() {
@@ -51,8 +51,8 @@ export default function About() {
             The person behind<br />the code
           </h2>
           <p className="section-subtitle">
-            A second-year IT student at GNITS who ships production-grade software,
-            wins hackathons, and continuously raises the bar.
+            An IT student at GNITS who ships production-ready software,
+            excels in national hackathons and competitive programming, and continuously raises the bar.
           </p>
         </motion.div>
 
@@ -67,20 +67,22 @@ export default function About() {
               style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
             >
               <p className="text-base leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
-                I'm <strong style={{ color: 'var(--text-primary)' }}>Manvitha Budidha</strong>, a second-year
+                I'm <strong style={{ color: 'var(--text-primary)' }}>Manvitha Budidha</strong>, an
                 Information Technology student at G. Narayanamma Institute of Technology and Science, Hyderabad,
-                maintaining a <strong style={{ color: 'var(--accent)' }}>9.39 CGPA</strong> while building
-                real-world software systems.
+                maintaining a <strong style={{ color: 'var(--accent)' }}>9.38 CGPA</strong> while engineering
+                production-ready software systems.
               </p>
               <p className="text-base leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
-                My internship at <strong style={{ color: 'var(--text-primary)' }}>Capabl</strong> gave me
-                hands-on experience shipping a production AI assistant (AcadeBot) with 50+ REST endpoints,
-                deployed on Render with continuous delivery from GitHub.
+                With hands-on experience building full-stack applications, backend REST APIs, and algorithm-driven
+                systems, I develop software end-to-end — from database modeling in PostgreSQL with Prisma to deploying
+                responsive React frontends, robust Node.js/FastAPI backends, and cross-platform Flutter mobile applications.
               </p>
               <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                I build because I love the craft. From mobile health apps that
-                reduce missed medication doses by 40%, to analytics APIs with sub-50ms response times —
-                every project is a chance to engineer something that actually matters.
+                I build because I love the craft of engineering. Whether implementing capacity-aware greedy nearest-neighbor
+                routing with the Haversine formula in <strong style={{ color: 'var(--text-primary)' }}>SmartRoute</strong>,
+                developing cross-platform medication tracking with Firebase security rules in <strong style={{ color: 'var(--text-primary)' }}>MediAssure</strong>,
+                or architecting AI-powered style recommendations in <strong style={{ color: 'var(--text-primary)' }}>StyleSpeak</strong> —
+                every project solves a real-world problem.
               </p>
             </div>
 

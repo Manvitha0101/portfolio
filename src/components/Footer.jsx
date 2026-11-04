@@ -47,6 +47,15 @@ export default function Footer() {
             GitHub
           </a>
           <a
+            href={CONTACT.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm transition-colors hover:opacity-70"
+            style={{ color: 'var(--text-muted)', textDecoration: 'none' }}
+          >
+            LinkedIn
+          </a>
+          <a
             href={`mailto:${CONTACT.email}`}
             className="text-sm transition-colors hover:opacity-70"
             style={{ color: 'var(--text-muted)', textDecoration: 'none' }}
